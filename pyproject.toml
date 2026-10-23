@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cryptocurrency-coursework"
+version = "0.1.0"
+description = "Reproducible cryptography and Bitcoin script exercises from cryptocurrency coursework"
+requires-python = ">=3.10"
+dependencies = [
+  "pycryptodome>=3.20,<4",
+  "ecdsa>=0.19,<1",
+  "btclib>=2026.10.17,<2027",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
